@@ -3,27 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class Health
 {
+    private float healthAmount = 100;
     public Image healthBar;
-    public float healthAmount = 100;
 
-    // Update is called once per frame
-    void Update()
+    public Health(int health)
     {
-      if(healthAmount <= 0)
-      {
-            Application.LoadLevel(Application.loadedLevel);
-      }
+        this.healthAmount = health;
     }
+    
 
     public void TakeDamage(float damage)
     {
-        healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 100;
+        if (healthAmount == 0)
+        {
+            healthAmount = 0;
+        }
+        else
+        {
+            healthAmount -= damage;
+            healthBar.fillAmount = healthAmount / 100;
+        }
     } 
 
-    public void Healing(float healPoints)
+    public void Heal(float healPoints)
     {
         healthAmount += healPoints;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);

@@ -5,15 +5,14 @@ using UnityEngine.AI;
 
 public class Enemy_Chasing : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
+    private int destPoint = 0;
+    public Transform[] patrolPoints;
     private NavMeshAgent navMeshAgent;
-
-    [SerializeField]
-    float moveSpeed = 0.25f;
+    [SerializeField] private Transform movePositionTransform;
+    [SerializeField] float moveSpeed = 0.25f;
 
     public float radius;
-    [Range(0,360)]
-    public float angle;
+    [Range(0,360)] public float angle;
 
     public GameObject playerRef; 
 
@@ -21,11 +20,57 @@ public class Enemy_Chasing : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
+    
+    
+
     // Start is called before the first frame update
     private void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.autoBraking = false;
+
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+
+        GoToNextPoint();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (canSeePlayer)
+        {
+            navMeshAgent.isStopped = false;
+            navMeshAgent.destination = movePositionTransform.position * moveSpeed;
+            float distanceToPlayer = Vector3.Distance(transform.position, playerRef.transform.position);
+            if (distanceToPlayer <= 2)
+            {
+                navMeshAgent.isStopped = true;
+                //playerRef.GetComponent<CharacterStats>().TakeDamage();
+            }
+        }
+        else
+        {
+            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+                GoToNextPoint();
+        }
+
+    }
+
+    void GoToNextPoint()
+    {
+        //if the enemy just finished chasing the player
+        if (navMeshAgent.isStopped == true) navMeshAgent.isStopped = false;
+        // Returns if no points have been set up
+        if (patrolPoints.Length == 0)
+            return;
+
+        // Set the agent to go to the currently selected destination.
+        navMeshAgent.destination = patrolPoints[destPoint].position;
+
+        // Choose the next point in the array as the destination,
+        // cycling to the start if necessary.
+        destPoint = (destPoint + 1) % patrolPoints.Length;
     }
 
     private IEnumerator FOVRoutine()
@@ -40,6 +85,7 @@ public class Enemy_Chasing : MonoBehaviour
         }
     } 
 
+    
     private void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
@@ -64,22 +110,4 @@ public class Enemy_Chasing : MonoBehaviour
         else if (canSeePlayer)
             canSeePlayer = false;
     }
-
-    private void Awake()
-    {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if(canSeePlayer)
-        {
-            navMeshAgent.destination = movePositionTransform.position * moveSpeed;
-        }
-        else
-        {
-            navMeshAgent.destination = transform.position;
-        }
-        
-    } 
 }
