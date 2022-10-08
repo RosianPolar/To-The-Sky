@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ItemShopScene.unity
     guid: 02d40071eed4b324aa94dd470c463862
+  - enabled: 1
+    path: Assets/Scenes/Level Selection/00_Level Selection.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level Selection/02_Level 02.unity
+    guid: 1a6d85d5dd51f42b1b8d534971b60933
+  - enabled: 1
+    path: Assets/Scenes/Level Selection/01_Level 01.unity
+    guid: b734324e633374081aa2588128d44bc6
   m_configObjects: {}
