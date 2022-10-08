@@ -1,31 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class Enemy_Chasing : MonoBehaviour
+public class TurretControl : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
-    private NavMeshAgent navMeshAgent;
+    private Transform player;
+    private float distanceToPlayer;
+    public Transform body, turret; 
+    public float firingRange;
+    public GameObject projectile;
+    public float bulletVelocity;
+    public float fireRate, nextFire;
 
-    [SerializeField]
-    float moveSpeed = 0.25f;
+    private UnityEngine.AI.NavMeshAgent navMeshAgent;
 
     public float radius;
-    [Range(0,360)]
+    [Range(0, 360)]
     public float angle;
-
-    public GameObject playerRef; 
 
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         StartCoroutine(FOVRoutine());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        distanceToPlayer = Vector3.Distance(player.position, transform.position);
+        if(canSeePlayer)
+        {
+            body.LookAt(player);
+            if(Time.time >= nextFire)
+            {
+                nextFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+               
+        }
     }
 
     private IEnumerator FOVRoutine()
@@ -38,7 +56,7 @@ public class Enemy_Chasing : MonoBehaviour
             yield return wait;
             FieldOfViewCheck();
         }
-    } 
+    }
 
     private void FieldOfViewCheck()
     {
@@ -65,17 +83,10 @@ public class Enemy_Chasing : MonoBehaviour
             canSeePlayer = false;
     }
 
-    private void Awake()
+    void Shoot()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        GameObject clone = Instantiate(projectile, turret.position, transform.rotation);
+        clone.GetComponent<Rigidbody>().AddForce(body.forward * bulletVelocity);
+        Destroy(clone, 15);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if(canSeePlayer)
-        {
-            navMeshAgent.destination = movePositionTransform.position * moveSpeed;
-        }
-        
-    } 
 }
