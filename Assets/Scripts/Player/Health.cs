@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Health
+public class Health : MonoBehaviour
 {
     private float healthAmount = 100;
     public Image healthBar;
@@ -16,14 +16,12 @@ public class Health
 
     public void TakeDamage(float damage)
     {
-        if (healthAmount == 0)
+        healthAmount -= damage;
+        healthBar.fillAmount = healthAmount / 100;
+        
+        if (healthAmount <= 0)
         {
             healthAmount = 0;
-        }
-        else
-        {
-            healthAmount -= damage;
-            healthBar.fillAmount = healthAmount / 100;
         }
     } 
 
@@ -33,5 +31,5 @@ public class Health
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
 
         healthBar.fillAmount = healthAmount / 100; 
-    }
+    } 
 }
