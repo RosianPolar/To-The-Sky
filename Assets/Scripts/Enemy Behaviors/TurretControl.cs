@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurretControl : MonoBehaviour
 {
     private Transform player;
-    private float distanceToPlayer;
     public Transform body, turret; 
     public float firingRange;
     public GameObject projectile;
@@ -33,7 +32,6 @@ public class TurretControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(player.position, transform.position);
         if(canSeePlayer)
         {
             body.LookAt(player);
