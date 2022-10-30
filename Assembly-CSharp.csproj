@@ -61,6 +61,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
     <Compile Include="Assets\Scripts\Enemy Behaviors\BulletBehavior.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\DoorTrigger.cs" />
     <Compile Include="Assets\Scripts\SingleLevel.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
@@ -151,7 +152,8 @@
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Script\TakeScreenshot.cs" />
     <Compile Include="Assets\Scripts\Grid\PathfindMaster.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Puzzles\DoorTrigger.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\BallTrigger.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\SlidingDoorTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />

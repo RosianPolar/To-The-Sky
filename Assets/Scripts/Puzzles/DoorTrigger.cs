@@ -8,13 +8,14 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField]
     GameObject door;
     Boolean isOpen = false;
-
+    
+    
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (!isOpen)
         {
-            door.transform.position += new Vector3(0, 4, 0);    //increase the Y position of the door by 4 units
+            door.transform.localPosition += new Vector3(0, 4, 0);    //increase the Y position of the door by 4 units
             isOpen = true; 
         } 
     }
@@ -23,7 +24,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if(isOpen)
         {
-            door.transform.position -= new Vector3(0, 4, 0);
+            door.transform.localPosition -= new Vector3(0, 4, 0);
             isOpen=false;
         }
     }
