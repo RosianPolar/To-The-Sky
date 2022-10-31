@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 					targetPosition = transform.position + Vector3.left;
 					startPosition = transform.position;
 					moving = true;
+				//play sounds
 				}
 			}
 			else if (Input.GetKeyDown(KeyCode.RightArrow)){
