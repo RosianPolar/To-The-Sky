@@ -22,8 +22,35 @@ public class PlayerMovement : MonoBehaviour
 	Vector3 startPosition;
 	bool moving;
 
+	private float verticalVelocity;
+	private float gravity = 14.0f;
+	private float jumpForce;
+	private CharacterController controller;
+
+
+	private void Start() {
+		controller = GetComponent<CharacterController>();
+	}
+
+
 	void Update()
 	{
+		if (controller.isGrounded)
+		{
+			verticalVelocity = -gravity * Time.deltaTime;
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				verticalVelocity = jumpForce;
+			}
+		}
+		else {
+			verticalVelocity -= gravity * Time.deltaTime;
+		}
+
+		Vector3 moveVector = new Vector3(0, verticalVelocity, 0);
+		controller.Move(moveVector * Time.deltaTime);
+
+
 		if (moving) {
 			if (Vector3.Distance(startPosition, transform.position) > 1f) {
 				transform.position = targetPosition;
@@ -77,8 +104,13 @@ public class PlayerMovement : MonoBehaviour
 				if (Physics.Raycast(transform.position + Vector3.up * rayOffsetY + Vector3.forward * rayOffsetZ, direction, rayLength)) return false;
 				if (Physics.Raycast(transform.position + Vector3.up * rayOffsetY - Vector3.forward * rayOffsetZ, direction, rayLength)) return false;
 			}
+			
 			return true;
 		}
 
 	}
+
+
+
+
 }

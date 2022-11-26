@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Projectile
-  - Event
-  - CheckPoint
   - PlayerDeath
+  - Coin
   layers:
   - Default
   - TransparentFX

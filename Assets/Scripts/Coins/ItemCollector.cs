@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoringSystem : MonoBehaviour
+public class ItemCollector : MonoBehaviour
 {
 	int coins = 0;
 
@@ -19,6 +19,7 @@ public class ScoringSystem : MonoBehaviour
 			coins++;
 			coinsText.text = "Coins: " + coins;
 			collectionSound.Play();
+			Debug.Log("Coins: " + coins);
 		}
 	}
 }
