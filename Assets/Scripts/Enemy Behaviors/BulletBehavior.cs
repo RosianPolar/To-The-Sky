@@ -31,7 +31,7 @@ public class BulletBehavior : MonoBehaviour
             var healthComponent = collision.GetComponent<Health>();
             if(healthComponent != null)
             {
-                healthComponent.TakeDamage( (float) 16.666);
+                healthComponent.TakeDamage(2);
             }
         }
     }

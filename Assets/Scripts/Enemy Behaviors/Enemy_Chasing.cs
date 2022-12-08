@@ -31,27 +31,27 @@ public class Enemy_Chasing : MonoBehaviour
 
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
-
-        GoToNextPoint();
+        if(patrolPoints != null)
+            GoToNextPoint();
     }
+
 
     // Update is called once per frame
     void Update()
     {
         if (canSeePlayer)
         {
-            navMeshAgent.isStopped = false;
-            navMeshAgent.destination = movePositionTransform.position * moveSpeed;
+            //navMeshAgent.isStopped = false;
+            navMeshAgent.destination = movePositionTransform.position;
             float distanceToPlayer = Vector3.Distance(transform.position, playerRef.transform.position);
-            if (distanceToPlayer <= 2)
+            if (distanceToPlayer <= 1)
             {
                 navMeshAgent.isStopped = true;
-                //playerRef.GetComponent<CharacterStats>().TakeDamage();
             }
         }
         else
         {
-            if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
+            if ((!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f) && patrolPoints != null)
                 GoToNextPoint();
         }
 
@@ -60,7 +60,7 @@ public class Enemy_Chasing : MonoBehaviour
     void GoToNextPoint()
     {
         //if the enemy just finished chasing the player
-        if (navMeshAgent.isStopped == true) navMeshAgent.isStopped = false;
+        //if (navMeshAgent.isStopped == true) navMeshAgent.isStopped = false;
         // Returns if no points have been set up
         if (patrolPoints.Length == 0)
             return;

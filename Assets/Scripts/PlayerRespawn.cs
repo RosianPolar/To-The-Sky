@@ -6,20 +6,24 @@ public class PlayerRespawn : MonoBehaviour
 {
 
     [SerializeField] private Transform player;
-    private CheckPointControls gm;
+    public Transform checkpoint;
 
     void Start()
     {
        // create checkpoint control object
-        gm = GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<CheckPointControls>();
+        checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").transform;
     }
 
     // when player falls off the plane they trigger the respawn function
-    private void OnTriggerEnter(Collider other){
-        if(other.CompareTag("Player")){
-            player.transform.position = gm.lastCheckPointPos;
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Enemy")
+        {
+            player.transform.position = checkpoint.position;
             Physics.SyncTransforms();
         }
+        
     }
+
 
 }
