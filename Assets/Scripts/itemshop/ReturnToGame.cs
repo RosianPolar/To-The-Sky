@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToGame : MonoBehaviour
 {
+
     public void PlayGame()
     {
-        SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex - 1);
+        // SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex - 1);
+
+        // take player back to game and unpause their progress
+        SceneManager.LoadScene("earthLevel");
+        Time.timeScale = 1f;
+       
     }
     
 }
