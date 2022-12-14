@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628335e0dce0d744ab1130dcb83c8955, type: 3}
   m_Name: quantityData
   m_EditorClassIdentifier: 
-  _value: 1
+  _value: 0

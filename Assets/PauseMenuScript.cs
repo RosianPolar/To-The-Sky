@@ -8,8 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
-// take off
-    public GameObject traderShopUI;
+
 
     void Start(){
         pauseMenuUI.SetActive(false);
@@ -61,14 +60,7 @@ public class PauseMenuScript : MonoBehaviour
         
     }
 
-    // take off
-    public void LoadTrader(){
-        traderShopUI.SetActive(true);
-    }
 
-    public void leaveTrader(){
-        traderShopUI.SetActive(false);
-    }
     
   
 }

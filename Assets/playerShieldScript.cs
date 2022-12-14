@@ -6,6 +6,7 @@ public class playerShieldScript : MonoBehaviour
 {
     public GameObject playerShield;
     public static bool ShieldIsOff = true;
+     [SerializeField] private QuantityData quantityData;
     
     void Start(){
         playerShield.SetActive(false);
@@ -27,8 +28,12 @@ public class playerShieldScript : MonoBehaviour
     }
     // turn shield on
     public void ShieldOn(){
-        playerShield.SetActive(true);
-        ShieldIsOff = false;
+        if(quantityData.Value>=1){
+            quantityData.Value--;
+            playerShield.SetActive(true);
+            ShieldIsOff = false;
+        }
+        
     }
     // turn shield off
     public void ShieldOff(){

@@ -11,7 +11,7 @@ public class ReturnToGame : MonoBehaviour
         // SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex - 1);
 
         // take player back to game and unpause their progress
-        SceneManager.LoadScene("earthLevel");
+        SceneManager.LoadScene("EnemyTesting");
         Time.timeScale = 1f;
        
     }
