@@ -10,6 +10,7 @@ public class ShopManagerScript : MonoBehaviour
     public int[,] shopItems = new int[5,5];
     public float coins;
     public Text CoinsText;
+    [SerializeField] private QuantityData quantityData;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class ShopManagerScript : MonoBehaviour
         shopItems[2,4] = 20;
 
         //Quantity
-        shopItems[3,1] = 0;
+        shopItems[3,1] = quantityData.Value;
         shopItems[3,2] = 0;
         shopItems[3,3] = 0;
         shopItems[3,4] = 0;
@@ -40,6 +41,9 @@ public class ShopManagerScript : MonoBehaviour
         if(coins >=shopItems[2, ButtonRef.GetComponent<ItemInfo>().ItemID]){
             coins -= shopItems[2, ButtonRef.GetComponent<ItemInfo>().ItemID];
             shopItems[3, ButtonRef.GetComponent<ItemInfo>().ItemID]++;
+            if(shopItems[3,1] == shopItems[3, ButtonRef.GetComponent<ItemInfo>().ItemID]){
+                quantityData.Value++;
+            }
             CoinsText.text = "Coins: " + coins.ToString();
             ButtonRef.GetComponent<ItemInfo>().QuantityText.text = shopItems[3, ButtonRef.GetComponent<ItemInfo>().ItemID].ToString();
         }
