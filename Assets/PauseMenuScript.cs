@@ -11,6 +11,12 @@ public class PauseMenuScript : MonoBehaviour
 // take off
     public GameObject traderShopUI;
 
+    void Start(){
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
