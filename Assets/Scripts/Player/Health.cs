@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public int healthAmount;
     public Image healthBar;
     public Transform checkpoint;
+    public GameObject playerShield;
+
 
     void Start()
     {
@@ -27,8 +29,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("TakeDamage");
-        healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 10;
+        if(!playerShield.activeSelf){
+             healthAmount -= damage;
+            healthBar.fillAmount = healthAmount / 10;
+        }
+
     } 
 
     public void Heal(int healPoints)

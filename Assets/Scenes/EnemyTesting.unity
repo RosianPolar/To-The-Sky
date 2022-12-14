@@ -3265,6 +3265,7 @@ MonoBehaviour:
   healthAmount: 10
   healthBar: {fileID: 0}
   checkpoint: {fileID: 1934411614}
+  playerShield: {fileID: 748208990}
 --- !u!114 &1937003427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4318,13 +4319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a84dd00a011cd4b8ec673d68b54a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shopCartItem: {fileID: 7999872674706699803, guid: 8a5010ffd4c97d643839d545e4c9d096, type: 3}
-  _selectItem: {fileID: 2372056261255114562}
-  _basketTotalText: {fileID: 2372056262890178858}
-  _CoinsText: {fileID: 2372056260982995212}
-  _buyItem: {fileID: 2372056262467242421}
-  _itemListContentPanel: {fileID: 2372056261999821588}
-  _shopCartListContentPanel: {fileID: 2372056261269821260}
 --- !u!114 &2372056261234440668
 MonoBehaviour:
   m_ObjectHideFlags: 0
