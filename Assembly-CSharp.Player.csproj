@@ -89,6 +89,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Enemy Behaviors\TurretControl.cs" />
     <Compile Include="Assets\playerShieldScript.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FenceTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Grid\Pathfinder.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\Scripts\Enemy Behaviors\EnemyDamage.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+    <Compile Include="Assets\Scripts\demoLevelAdvancement.cs" />
     <Compile Include="Assets\Scripts\inventory\itemUse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
@@ -171,8 +173,6 @@
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Script\TakeScreenshot.cs" />
     <Compile Include="Assets\Scripts\Grid\PathfindMaster.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\demoLevelAdvancement.cs" />
-    <Compile Include="Assets\Scripts\Puzzles\FenceTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />

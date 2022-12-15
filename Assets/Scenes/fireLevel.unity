@@ -2091,6 +2091,7 @@ GameObject:
   - component: {fileID: 376538785}
   - component: {fileID: 376538784}
   - component: {fileID: 376538783}
+  - component: {fileID: 376538787}
   m_Layer: 0
   m_Name: end zone
   m_TagString: Untagged
@@ -2176,6 +2177,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376538787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376538782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a6a0b1c29ea624fa8103dc46a5eca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: waterLevel
 --- !u!1 &414667680
 GameObject:
   m_ObjectHideFlags: 0
