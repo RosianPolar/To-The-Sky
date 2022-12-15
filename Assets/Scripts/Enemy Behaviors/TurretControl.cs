@@ -10,6 +10,7 @@ public class TurretControl : MonoBehaviour
     public GameObject projectile;
     public float bulletVelocity;
     public float fireRate, nextFire;
+    private Animator anim;
 
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
 
@@ -81,6 +82,7 @@ public class TurretControl : MonoBehaviour
             canSeePlayer = false;
     }
 
+ 
     void Shoot()
     {
         GameObject clone = Instantiate(projectile, turret.position, transform.rotation);
