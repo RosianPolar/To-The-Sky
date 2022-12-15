@@ -172,6 +172,7 @@
     <Compile Include="Assets\Scripts\Grid\PathfindMaster.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\demoLevelAdvancement.cs" />
+    <Compile Include="Assets\Scripts\Puzzles\FenceTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
