@@ -66,8 +66,10 @@
     <Compile Include="Assets\Scripts\Puzzles\DoorTrigger.cs" />
     <Compile Include="Assets\Scripts\SingleLevel.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\PauseMenuScript.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
+    <Compile Include="Assets\shoppingCartItemUI.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
     <Compile Include="Assets\Scripts\Grid\GridBase.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Enemy Behaviors\TurretControl.cs" />
+    <Compile Include="Assets\playerShieldScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Scripts\Grid\Pathfinder.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
@@ -106,11 +109,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\volumeController.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\clickSound.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
     <Compile Include="Assets\Scripts\Enemy Behaviors\EnemyDamage.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+    <Compile Include="Assets\Scripts\inventory\itemUse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -144,6 +150,7 @@
     <Compile Include="Assets\Scripts\Puzzles\ConveyorBelt.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\Scripts\inventory\QuantityData.cs" />
     <Compile Include="Assets\Scripts\Player\footstep.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
     <Compile Include="Assets\Scripts\LevelSelection.cs" />
