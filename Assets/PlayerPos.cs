@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerPos : MonoBehaviour
 {
-    private CheckPointControls gm;
+    private CheckPointControls checkpoint;
 
     // Start is called before the first frame update
     void Start()
     {
         // create checkpoint control object
-        gm = GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<CheckPointControls>();
-        transform.position = gm.lastCheckPointPos;
+        checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<CheckPointControls>();
+        transform.position = checkpoint.lastCheckPointPos;
     }
 
     // Update is called once per frame
