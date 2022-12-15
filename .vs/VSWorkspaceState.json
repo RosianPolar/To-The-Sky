@@ -3,8 +3,8 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Enemy Behaviors"
+    "\\Assets\\Scripts\\Coins"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Enemy Behaviors\\BulletBehavior.cs.meta",
+  "SelectedNode": "\\Assets\\Scripts\\Coins\\Rotate.cs",
   "PreviewInSolutionExplorer": false
 }
