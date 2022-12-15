@@ -21,8 +21,7 @@ public class playerShieldScript : MonoBehaviour
         if (ShieldIsOff)
         {
             ShieldOn();
-            // turns shield off after 5 seconds
-            Invoke("ShieldOff",5.0f);
+            
         }
         else {
             ShieldOff();
@@ -35,6 +34,8 @@ public class playerShieldScript : MonoBehaviour
             quantityData.Value--;
             playerShield.SetActive(true);
             ShieldIsOff = false;
+            // turns shield off after 5 seconds
+            Invoke("ShieldOff",5.0f);
         }
         
     }
