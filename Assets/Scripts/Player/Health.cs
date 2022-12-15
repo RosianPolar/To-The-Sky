@@ -15,15 +15,15 @@ public class Health : MonoBehaviour
     public GameObject playerShield;
 
 
-    void Start()
-    {
-        // create checkpoint control object
-        checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").transform;
-    }
+    // void Start()
+    // {
+    //     // create checkpoint control object
+    //     checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").transform;
+    // }
 
     private void Update()
     {
-        if (healthAmount <= 0) SceneManager.LoadScene("EnemyTesting");
+        if (healthAmount <= 0)  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TakeDamage(int damage)
