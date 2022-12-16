@@ -9,17 +9,20 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public PlayerRespawn playerRespawn;
-    public int healthAmount;
-    public Image healthBar;
     public Transform checkpoint;
     public GameObject playerShield;
 
+    public int maxHealth = 10;
+    public int healthAmount;
 
-    // void Start()
-    // {
-    //     // create checkpoint control object
-    //     checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").transform;
-    // }
+    public HealthBar healthBar;
+    
+
+    void Start()
+    {
+        healthAmount = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     private void Update()
     {
@@ -29,11 +32,12 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("TakeDamage");
-        if(!playerShield.activeSelf){
-             healthAmount -= damage;
-            healthBar.fillAmount = healthAmount / 10;
-        }
+        if(!playerShield.activeSelf)
+        {
+            healthAmount -= damage;
 
+            healthBar.SetHealth(healthAmount);
+        }
     } 
 
     public void Heal(int healPoints)
@@ -41,7 +45,7 @@ public class Health : MonoBehaviour
         healthAmount += healPoints;
         healthAmount = Mathf.Clamp(healthAmount, 0, 10);
 
-        healthBar.fillAmount = healthAmount / 10; 
+        healthBar.SetHealth(healthAmount);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
