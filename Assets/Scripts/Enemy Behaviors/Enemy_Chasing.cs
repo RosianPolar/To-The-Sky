@@ -44,7 +44,7 @@ public class Enemy_Chasing : MonoBehaviour
             //navMeshAgent.isStopped = false;
             navMeshAgent.destination = movePositionTransform.position;
             float distanceToPlayer = Vector3.Distance(transform.position, playerRef.transform.position);
-            if (distanceToPlayer <= 1)
+            if (distanceToPlayer <= .75)
             {
                 navMeshAgent.isStopped = true;
             }
@@ -53,6 +53,7 @@ public class Enemy_Chasing : MonoBehaviour
         {
             if ((!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f) && patrolPoints != null)
                 GoToNextPoint();
+            navMeshAgent.isStopped = false;
         }
 
     }

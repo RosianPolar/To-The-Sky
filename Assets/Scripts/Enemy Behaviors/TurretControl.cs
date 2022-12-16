@@ -87,6 +87,5 @@ public class TurretControl : MonoBehaviour
     {
         GameObject clone = Instantiate(projectile, turret.position, transform.rotation);
         clone.GetComponent<Rigidbody>().AddForce(body.forward * bulletVelocity);
-        Destroy(clone, 15);
     }
 }

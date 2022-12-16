@@ -6,12 +6,12 @@ public class PlayerRespawn : MonoBehaviour
 {
 
     [SerializeField] private Transform player;
-    public CheckPointControls checkpoint;
+    public GameObject checkpoint;
 
     void Start()
     {
        // create checkpoint control object
-        checkpoint = GameObject.FindGameObjectWithTag("CheckPoint").GetComponent<CheckPointControls>();
+        checkpoint = GameObject.FindGameObjectWithTag("CheckPoint");
     }
 
     // when player gets hit by enemy they trigger the respawn function
@@ -19,7 +19,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (hit.gameObject.tag == "Enemy")
         {
-            player.transform.position = checkpoint.lastCheckPointPos;
+            player.transform.position = checkpoint.transform.position;
             Physics.SyncTransforms();
         }
         

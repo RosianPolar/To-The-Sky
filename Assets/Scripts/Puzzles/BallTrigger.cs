@@ -28,7 +28,6 @@ public class BallTrigger : MonoBehaviour
     {
         if(isPressed)
         {
-            Destroy(bouncyBall);
             isPressed = false;
         }
     }
