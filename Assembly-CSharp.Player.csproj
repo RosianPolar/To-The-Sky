@@ -155,6 +155,7 @@
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Scripts\inventory\QuantityData.cs" />
     <Compile Include="Assets\Scripts\Player\footstep.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\POLY STYLE - Vegetation Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
     <Compile Include="Assets\Scripts\LevelSelection.cs" />
     <Compile Include="Assets\Scripts\Coins\ItemCollector.cs" />
